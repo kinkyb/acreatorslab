@@ -3,9 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Xproject — The Complete Toolkit for Adult Content Creators</title>
+<title>ACreatorsLab — The Complete Toolkit for Adult Content Creators</title>
 <meta name="description" content="Six AI-powered tools built exclusively for adult content creators and agencies. No filters. No restrictions. No compromises.">
-<meta name="robots" content="noindex">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://acreatorslab.com">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://acreatorslab.com">
+<meta property="og:title" content="ACreatorsLab — The Complete Toolkit for Adult Content Creators">
+<meta property="og:description" content="Six AI-powered tools built exclusively for adult content creators and agencies. No filters. No restrictions. No compromises.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ACreatorsLab — The Complete Toolkit for Adult Content Creators">
+<meta name="twitter:description" content="Six AI-powered tools built exclusively for adult content creators and agencies. No filters. No restrictions. No compromises.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -571,7 +581,7 @@
 
 <!-- ─── NAV ───────────────────────────────────────────────────────────────── -->
 <nav id="nav">
-  <a href="#" class="nav-logo"><span>X</span>project</a>
+  <a href="#" class="nav-logo"><span>A</span>CreatorsLab</a>
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="#tools">Tools</a></li>
@@ -588,7 +598,7 @@
   <div class="hero-inner">
     <div class="eyebrow">Adult Creator Tools</div>
     <h1 class="hero-title">
-      <span class="x">X</span><span class="rest">project</span>
+      <span class="x">A</span><span class="rest">CreatorsLab</span>
     </h1>
     <p class="hero-tagline">The complete toolkit for adult content creators.</p>
     <p class="hero-sub">
@@ -762,7 +772,7 @@
   <div class="h-rule" style="margin-bottom: 60px;"></div>
   <div class="section-label">For Agencies</div>
   <h2 class="section-title">Running multiple models?<br><em>We built this for you.</em></h2>
-  <p class="section-sub">Every tool in the Xproject stack is designed to scale. API access, high-volume plans, and B2B invoicing available — no adult payment processor required for agency contracts.</p>
+  <p class="section-sub">Every tool in the ACreatorsLab stack is designed to scale. API access, high-volume plans, and B2B invoicing available — no adult payment processor required for agency contracts.</p>
 
   <div class="agency-grid">
     <div class="agency-cell">
@@ -800,7 +810,7 @@
   <p class="section-sub">Third-party resources worth knowing about. Not affiliated, not endorsed — just useful.</p>
 
   <div class="disclaimer">
-    The following resources are created and sold by independent third parties. Xproject has no affiliation, ownership, or commercial relationship with these products. Links open external websites.
+    The following resources are created and sold by independent third parties. ACreatorsLab has no affiliation, ownership, or commercial relationship with these products. Links open external websites.
   </div>
 
   <div class="resources-grid">
@@ -841,8 +851,9 @@
       ImageTagger, VideoTagger, and AutoXPoster launch soon.<br>
       Drop your email and we'll reach out first — with an early-access price.
     </p>
-    <form class="newsletter-form" id="waitlist-form">
-      <input type="email" class="newsletter-input" placeholder="your@email.com" required>
+    <form class="newsletter-form" id="waitlist-form" name="waitlist" netlify>
+      <input type="hidden" name="form-name" value="waitlist">
+      <input type="email" name="email" class="newsletter-input" placeholder="your@email.com" required>
       <button type="submit" class="newsletter-submit">Notify me</button>
     </form>
     <p class="newsletter-small">No spam. One email when something launches. That's it.</p>
@@ -851,7 +862,7 @@
 
 <!-- ─── FOOTER ─────────────────────────────────────────────────────────────── -->
 <footer>
-  <a href="#" class="footer-logo"><span>X</span>project</a>
+  <a href="#" class="footer-logo"><span>A</span>CreatorsLab</a>
   <div class="footer-links">
     <a href="https://acaption.com" target="_blank" rel="noopener">Acaption</a>
     <a href="https://gifperfect.com" target="_blank" rel="noopener">GIF Perfect</a>
@@ -868,17 +879,26 @@
   const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 48);
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  // Waitlist form
+  // Waitlist form — AJAX submit to Netlify Forms
   document.getElementById('waitlist-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    const input = this.querySelector('input');
-    const btn   = this.querySelector('button');
-    btn.textContent = 'You\'re in ✓';
-    btn.style.background = '#2d6a4f';
-    btn.disabled = true;
-    input.value = '';
-    input.placeholder = 'You\'re on the list.';
-    input.disabled = true;
+    const form  = this;
+    const input = form.querySelector('input[type="email"]');
+    const btn   = form.querySelector('button');
+    const data  = new URLSearchParams({ 'form-name': 'waitlist', email: input.value });
+
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data })
+      .then(() => {
+        btn.textContent = "You're in \u2713";
+        btn.style.background = '#2d6a4f';
+        btn.disabled = true;
+        input.value = '';
+        input.placeholder = "You're on the list.";
+        input.disabled = true;
+      })
+      .catch(() => {
+        btn.textContent = 'Try again';
+      });
   });
 
   // Smooth scroll for anchor links

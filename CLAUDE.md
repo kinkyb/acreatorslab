@@ -1,9 +1,9 @@
-# Xproject — Project Knowledge
+# ACreatorsLab — Project Knowledge
 
 ## What This Is
 Aggregator/hub website showcasing all adult-market tools and products built by the same owner. Acts as a discovery and cross-sell layer — customers landing on one product see the full suite.
 
-**Placeholder name**: "Xproject" — final domain/brand TBD.
+**Brand**: ACreatorsLab — domain: `acreatorslab.com`
 
 ## Why It Exists
 - All products serve the same buyer (OF creator / adult agency)
@@ -46,7 +46,7 @@ Tool cards: red top-border reveal on hover, dimmed opacity for coming-soon items
 
 ## Sections in index.html
 1. **Nav** — fixed, blurs in on scroll
-2. **Hero** — "Xproject" logo, tagline, two CTAs
+2. **Hero** — "ACreatorsLab" logo, tagline, two CTAs
 3. **Tools Grid** — 2-col, live tools full opacity / coming-soon dimmed
 4. **Creator Toolkit Bundle** — ImageTagger + VideoTagger + Viewer, €79 one-time, coming soon
 5. **Agency Section** — API access, B2B invoicing, volume plans, EU VAT
@@ -56,7 +56,7 @@ Tool cards: red top-border reveal on hover, dimmed opacity for coming-soon items
 
 ## Community Resources Disclaimer
 KinkyBeatricePro.com script packs are featured as "Community Resources" — third-party, external links.
-**No affiliation, ownership, or association must ever be implied.** The disclaimer box in the HTML must remain.
+**No affiliation, ownership, or association must ever be implied.** The disclaimer box in the HTML must remain and must reference ACreatorsLab (not Xproject).
 
 ## Dev Server
 ```bash
@@ -71,14 +71,16 @@ No Netlify functions needed (pure static, all links point out to other domains).
 ```bash
 netlify deploy --prod
 ```
-Site ID and domain TBD once final brand name is chosen.
+Domain: `acreatorslab.com` — set up Netlify site and link domain when ready.
 
 ## Pending Decisions
-- [ ] Final brand name / domain (placeholder: "Xproject")
-- [ ] Email collection backend for waitlist (Netlify Forms or a function)
-- [ ] Replace `noindex` meta tag with real SEO tags once domain is live
-- [ ] Wire newsletter form to actual endpoint
-- [ ] Add real Open Graph image once brand name is confirmed
+- [x] Final brand name / domain → `acreatorslab.com`
+- [x] Email collection backend → Netlify Forms (AJAX, `name="waitlist"`)
+- [x] Replace `noindex` → real SEO + OG tags added
+- [x] Wire newsletter form → done
+- [ ] Add Open Graph image (`og:image`) — placeholder still missing
+- [ ] Set up Netlify site, link `acreatorslab.com` domain
+- [ ] Update contact email from `hello@acaption.com` to an `@acreatorslab.com` address once domain is live
 
 ## Related Projects (Other Sessions)
 | Project | Folder | Notes |

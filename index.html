@@ -476,6 +476,119 @@
     color: var(--muted2); margin-top: 18px;
   }
 
+  /* ─── OF AUTOMATION ─────────────────────────────────────────────────── */
+  .automation-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .automation-stream {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 0 60px;
+    padding: 48px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .automation-stream:first-child { border-top: 1px solid var(--border); }
+
+  .stream-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 2px;
+  }
+  .stream-number {
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .stream-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+  }
+  .stream-name em { font-weight: 400; }
+  .stream-badge {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 7.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 4px 9px;
+  }
+  .stream-badge-live {
+    background: var(--green-bg);
+    color: var(--green-text);
+    border: 1px solid var(--green-border);
+  }
+  .stream-badge-build {
+    background: rgba(200,16,46,0.06);
+    color: #c8102e;
+    border: 1px solid rgba(200,16,46,0.2);
+  }
+
+  .stream-body {}
+  .stream-desc {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.85;
+    margin-bottom: 20px;
+    max-width: 600px;
+  }
+  .stream-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 24px;
+  }
+  .stream-features li {
+    font-size: 10px;
+    color: var(--text);
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+    padding-left: 16px;
+    position: relative;
+    opacity: 0.8;
+  }
+  .stream-features li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 9px;
+  }
+  .automation-cta-block {
+    margin-top: 52px;
+    padding: 36px 40px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .automation-cta-text {}
+  .automation-cta-label {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .automation-cta-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.3px;
+  }
+  .automation-cta-heading em { font-weight: 400; }
+
   /* ─── NEWSLETTER ─────────────────────────────────────────────────────── */
   .newsletter-box {
     background: var(--surface);
@@ -588,7 +701,7 @@
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="#tools">Tools</a></li>
-      <li><a href="#bundle">Bundle</a></li>
+      <li><a href="#automation">Automation</a></li>
       <li><a href="#agencies">Agencies</a></li>
       <li><a href="#resources">Resources</a></li>
     </ul>
@@ -768,28 +881,103 @@
   </div>
 </div>
 
-<!-- ─── BUNDLE ──────────────────────────────────────────────────────────────── -->
-<div class="section-wrap" id="bundle" style="padding-top: 0;">
-  <div class="h-rule" style="margin-bottom: 60px;"></div>
-  <div class="section-label">Creator Toolkit</div>
-  <h2 class="section-title">Three tools.<br><em>One price.</em></h2>
-  <p class="section-sub">ImageTagger, VideoTagger, and Viewer in a single purchase — the complete library management stack for creators with large media collections.</p>
 
-  <div class="bundle-box">
-    <div>
-      <div class="bundle-tags">
-        <span class="bundle-tag">ImageTagger</span>
-        <span class="bundle-tag">VideoTagger</span>
-        <span class="bundle-tag">Viewer</span>
+<!-- ─── OF AUTOMATION ────────────────────────────────────────────────────────── -->
+<div class="section-wrap" id="automation" style="padding-top: 0;">
+  <div class="h-rule" style="margin-bottom: 60px;"></div>
+  <div class="section-label">Automation</div>
+  <h2 class="section-title">Running on autopilot.<br><em>Built to your spec.</em></h2>
+  <p class="section-sub">Pre-built automation setups for OnlyFans and X — live, running in production, and available to deploy on your accounts. Every setup uses <a href="https://acaption.com" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">Acaption</a> to generate explicit AI captions on the fly from your media. OF posting, promo rotation, mass messaging, and <a href="https://autoxposter.com" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">AutoXPoster</a> for X — all running autonomously, all available as pre-built setups or custom-built to spec.</p>
+
+  <div class="automation-grid">
+
+    <!-- Stream 1 — Automated Posting -->
+    <div class="automation-stream">
+      <div class="stream-meta">
+        <div class="stream-number">Stream 01</div>
+        <div class="stream-name">Automated<br><em>Posting</em></div>
+        <span class="stream-badge stream-badge-live">● Live · Pre-Built Setup</span>
       </div>
-      <p class="tool-desc" style="max-width: 520px; margin-bottom: 26px;">Tag your entire image and video library with AI. Search by tag, filter by folder, select and export. Bring your own xAI API key — no recurring cost beyond the one-time purchase.</p>
-      <a href="#newsletter" class="btn btn-amber">Get notified when it launches</a>
+      <div class="stream-body">
+        <p class="stream-desc">A fully autonomous posting engine for your OnlyFans account. Media is picked from a rotating library pool — images, GIFs, and videos — and posted on a fixed schedule around the clock. Each post gets a unique, explicit AI caption generated on the fly by Acaption, matched to the content.</p>
+        <ul class="stream-features">
+          <li>Scheduled posting 24/7 — fixed intervals, no manual input required</li>
+          <li>Rotating media pool: images, GIFs, and videos cycled intelligently</li>
+          <li>On-the-fly explicit captions via Acaption — unique per post, no repeats</li>
+          <li>Automatic pin management — top posts always pinned, rotated automatically</li>
+          <li>Rotating promo URLs embedded in every post caption</li>
+          <li>Available as a pre-built setup or custom-built to your posting schedule and library structure</li>
+        </ul>
+      </div>
     </div>
-    <div class="bundle-price-block">
-      <div class="bundle-price">€79</div>
-      <div class="bundle-billing">one-time · yours forever</div>
-      <div class="bundle-status">Coming Soon</div>
+
+    <!-- Stream 2 — Promo Automation -->
+    <div class="automation-stream">
+      <div class="stream-meta">
+        <div class="stream-number">Stream 02</div>
+        <div class="stream-name">Creator Promo<br><em>Automation</em></div>
+        <span class="stream-badge stream-badge-live">● Live · Pre-Built Setup</span>
+      </div>
+      <div class="stream-body">
+        <p class="stream-desc">Built for creators who sell promotional services to other models. The setup posts promo content from your media library on a rotating schedule — each post captioned by Acaption and carrying the promoted creator's tracking link. Keeps one Story permanently live, swapped automatically on each new promo post for maximum visibility.</p>
+        <ul class="stream-features">
+          <li>Rotating creator promo queue — each creator gets their slot and their link</li>
+          <li>On-the-fly explicit captions via Acaption, matched to each promo post</li>
+          <li>Automatic Story rotation — one Story always live, updated with each new post</li>
+          <li>Tracking links embedded per creator — full attribution on every post</li>
+          <li>Scales to any number of creators in your promo roster</li>
+          <li>Available as a pre-built setup or extended with custom creator management logic</li>
+        </ul>
+      </div>
     </div>
+
+    <!-- Stream 3 — Mass Messaging -->
+    <div class="automation-stream">
+      <div class="stream-meta">
+        <div class="stream-number">Stream 03</div>
+        <div class="stream-name">Mass<br><em>Messaging</em></div>
+        <span class="stream-badge stream-badge-live">● Live</span>
+      </div>
+      <div class="stream-body">
+        <p class="stream-desc">Automated DM campaigns to your full subscriber base — free content drops or paid PPV, both handled by the same setup. Media is pulled from your library pool, captioned on the fly by Acaption, and delivered to fans without manual sending. The messaging engine is live and running in production.</p>
+        <ul class="stream-features">
+          <li>Free mass DM — send media + caption to all subscribers in one broadcast</li>
+          <li>PPV mass DM — locked content at your price point, sent to your full list</li>
+          <li>On-the-fly explicit captions via Acaption for every message</li>
+          <li>Media pulled from your library pool — no manual file selection</li>
+          <li>Available as a pre-built setup or customised with targeting filters and send schedules</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Stream 4 — AutoXPoster -->
+    <div class="automation-stream">
+      <div class="stream-meta">
+        <div class="stream-number">Stream 04</div>
+        <div class="stream-name"><span style="color:var(--accent)">Auto</span><br><em>XPoster</em></div>
+        <span class="stream-badge stream-badge-live">● Live · Pre-Built Setup</span>
+      </div>
+      <div class="stream-body">
+        <p class="stream-desc">A fully autonomous X (Twitter) posting engine. Drop media into a folder — AutoXPoster handles everything: explicit caption generation via Acaption, scheduling, and posting around the clock every 15 minutes. Dual-account support built in, with OnlyFans creator promo rotation across your post queue.</p>
+        <ul class="stream-features">
+          <li>Posts to X every 15 minutes, 24/7 — fully unattended</li>
+          <li>On-the-fly explicit captions via Acaption for every post</li>
+          <li>Dual-account support — two X accounts on alternating schedules</li>
+          <li>Creator promo rotation built in — each creator gets their link in the queue</li>
+          <li>GIF, video, and image pipeline with automatic compression</li>
+          <li>Available as a pre-built setup or custom-built to your account structure</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="automation-cta-block">
+    <div class="automation-cta-text">
+      <div class="automation-cta-label">Get a setup or build your own</div>
+      <div class="automation-cta-heading">Ready to run on your account.<br><em>Or built to your exact spec.</em></div>
+    </div>
+    <a href="mailto:acreatorslab@translatea.com" class="btn btn-primary">Talk to us →</a>
   </div>
 </div>
 

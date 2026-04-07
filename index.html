@@ -336,6 +336,26 @@
   .badge-soon   { background: var(--amber-bg);  color: var(--amber-text);  border: 1px solid var(--amber-border); }
   .badge-price  { background: transparent;      color: var(--muted);       border: 1px solid var(--border2); font-size: 8px; }
 
+  /* Platform tags */
+  .platform-tags {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-top: 14px;
+  }
+  .ptag {
+    font-size: 7.5px; letter-spacing: 0.22em; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 0;
+    display: inline-flex; align-items: center; gap: 5px;
+  }
+  .ptag::before { content: ''; width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+  .ptag-of       { background: rgba(0,175,240,0.07); color: #4db8d8; border: 1px solid rgba(0,175,240,0.18); }
+  .ptag-of::before { background: #00AFF0; }
+  .ptag-x        { background: rgba(232,224,216,0.05); color: #a09890; border: 1px solid rgba(232,224,216,0.12); }
+  .ptag-x::before { background: #e8e0d8; }
+  .ptag-tg       { background: rgba(42,171,238,0.07); color: #5aabe8; border: 1px solid rgba(42,171,238,0.18); }
+  .ptag-tg::before { background: #2AABEE; }
+  .ptag-any      { background: rgba(200,16,46,0.05); color: var(--muted); border: 1px solid var(--border2); }
+  .ptag-any::before { background: var(--muted); opacity: 0.5; }
+
   .tool-tagline {
     font-family: 'Playfair Display', serif;
     font-style: italic; font-size: 14px;
@@ -752,6 +772,7 @@
           <span class="badge badge-price">From €59 / mo</span>
         </div>
       </div>
+      <div class="platform-tags"><span class="ptag ptag-any">Any Platform</span></div>
       <p class="tool-tagline">"Three explicit, conversion-ready captions. Drop a file and walk away."</p>
       <p class="tool-desc">Upload a photo or video — Acaption reads the content and writes three caption variants optimised for different tones and audiences. Works on both images and videos up to one minute.</p>
       <ul class="tool-features">
@@ -775,6 +796,7 @@
           <span class="badge badge-price">From $29 one-time</span>
         </div>
       </div>
+      <div class="platform-tags"><span class="ptag ptag-any">Any Platform</span></div>
       <p class="tool-tagline">"Any video into platform-perfect GIFs. Every size limit beaten, automatically."</p>
       <p class="tool-desc">Set a target file size — 15 MB for X, 25 MB for Discord, 99 MB for OnlyFans — and get back a numbered set of GIF chunks that each stay under the limit. Desktop app. No subscription. Yours forever.</p>
       <ul class="tool-features">
@@ -798,6 +820,7 @@
           <span class="badge badge-price">From $29 one-time</span>
         </div>
       </div>
+      <div class="platform-tags"><span class="ptag ptag-any">Any Platform</span></div>
       <p class="tool-tagline">"Any video into cinematic slow motion. AI frame interpolation, any output format."</p>
       <p class="tool-desc">Desktop app that converts any video or GIF to slow motion using AI frame interpolation (RIFE). Choose ½, ¼, or ⅛ speed — output as MP4, GIF, WebM, or MOV. Offline, one-time licence, Mac and Windows.</p>
       <ul class="tool-features">
@@ -821,6 +844,7 @@
           <span class="badge badge-price">$79 one-time</span>
         </div>
       </div>
+      <div class="platform-tags"><span class="ptag ptag-any">Any Platform</span></div>
       <p class="tool-tagline">"Tag 10,000 images in one click. Find anything in seconds."</p>
       <p class="tool-desc">Desktop app that scans your image library, sends each file to AI vision, and writes tags to a searchable catalogue. Includes Viewer — a browser-based tool for filtering, selecting, and exporting from your catalogue.</p>
       <ul class="tool-features">
@@ -844,6 +868,7 @@
           <span class="badge badge-price">Bundled</span>
         </div>
       </div>
+      <div class="platform-tags"><span class="ptag ptag-any">Any Platform</span></div>
       <p class="tool-tagline">"Frame-by-frame AI tagging for your entire video vault."</p>
       <p class="tool-desc">Extracts frames from every video at configurable intervals, tags each frame, then merges the results into one tag set per video. Same searchable Viewer as ImageTagger — one tool, both formats, one catalogue.</p>
       <ul class="tool-features">
@@ -875,6 +900,7 @@
         <div class="stream-number">Stream 01</div>
         <div class="stream-name">Automated<br><em>Posting</em></div>
         <span class="stream-badge stream-badge-live">● Live · Pre-Built Setup</span>
+        <div class="platform-tags" style="margin-top:16px;"><span class="ptag ptag-of">OnlyFans</span></div>
       </div>
       <div class="stream-body">
         <p class="stream-desc">A fully autonomous posting engine for your OnlyFans account. Media is picked from a rotating library pool — images, GIFs, and videos — and posted on a fixed schedule around the clock. Each post gets a unique, explicit AI caption generated on the fly by Acaption, matched to the content.</p>
@@ -895,6 +921,7 @@
         <div class="stream-number">Stream 02</div>
         <div class="stream-name">Creator Promo<br><em>Automation</em></div>
         <span class="stream-badge stream-badge-live">● Live · Pre-Built Setup</span>
+        <div class="platform-tags" style="margin-top:16px;"><span class="ptag ptag-of">OnlyFans</span></div>
       </div>
       <div class="stream-body">
         <p class="stream-desc">Built for creators who sell promotional services to other models. The setup posts promo content from your media library on a rotating schedule — each post captioned by Acaption and carrying the promoted creator's tracking link. Keeps one Story permanently live, swapped automatically on each new promo post for maximum visibility.</p>
@@ -915,6 +942,7 @@
         <div class="stream-number">Stream 03</div>
         <div class="stream-name">Auto Mass<br><em>Messaging</em></div>
         <span class="stream-badge stream-badge-live">● Live · Pre-Built Setup</span>
+        <div class="platform-tags" style="margin-top:16px;"><span class="ptag ptag-of">OnlyFans</span></div>
       </div>
       <div class="stream-body">
         <p class="stream-desc">Automated DM campaigns to your full subscriber base — free content drops or paid PPV, both handled by the same setup. Media is pulled from your library pool, captioned on the fly by Acaption, and delivered to fans without manual sending. The messaging engine is live and running in production.</p>
@@ -934,6 +962,7 @@
         <div class="stream-number">Stream 04</div>
         <div class="stream-name">Auto<br><em>XPoster</em></div>
         <span class="stream-badge stream-badge-live">● Live · Pre-Built Setup</span>
+        <div class="platform-tags" style="margin-top:16px;"><span class="ptag ptag-x">X / Twitter</span></div>
       </div>
       <div class="stream-body">
         <p class="stream-desc">A fully autonomous X (Twitter) posting engine. Drop media into a folder — AutoXPoster handles everything: explicit caption generation via Acaption, scheduling, and posting around the clock every 15 minutes. Dual-account support built in, with OnlyFans creator promo rotation across your post queue.</p>
@@ -954,6 +983,7 @@
         <div class="stream-number">Stream 05</div>
         <div class="stream-name">Telegram<br><em>Channel</em></div>
         <span class="stream-badge stream-badge-live">● Live · Pre-Built Setup</span>
+        <div class="platform-tags" style="margin-top:16px;"><span class="ptag ptag-tg">Telegram</span></div>
       </div>
       <div class="stream-body">
         <p class="stream-desc">A complete adult Telegram channel — built, automated, and monetised from day one. Your content posts automatically from a media library, your promoted creators get their promo GIFs and OF links in the rotation, and your subscribers can unlock premium content directly inside Telegram with no external payment processor. Every setup is fully customised to your channel, your roster, and your content strategy.</p>

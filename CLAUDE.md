@@ -1,5 +1,8 @@
 # ACreatorsLab — Project Knowledge
 
+## Workflow Rules
+- **Verify deploy target before deploying**: Before running any deploy command, confirm which Netlify site ID / project it will deploy to. Check `.netlify/state.json` or use `--site` flag explicitly. Deploying to the wrong site is a silent failure — the correct site gets nothing.
+
 ## What This Is
 Aggregator/hub website showcasing all adult-market tools and products built by the same owner. Acts as a discovery and cross-sell layer — customers landing on one product see the full suite.
 

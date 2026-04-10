@@ -87,7 +87,7 @@
     font-size: 21px;
     font-weight: 700;
     letter-spacing: -0.5px;
-    color: #fff;
+    color: var(--text);
     text-decoration: none;
   }
   .nav-logo span { color: var(--accent); }
@@ -174,7 +174,7 @@
     font-weight: 700;
     line-height: 0.92;
     letter-spacing: -3px;
-    color: #fff;
+    color: var(--text);
     margin-bottom: 28px;
   }
   .hero-title .x    { color: var(--accent); }
@@ -264,7 +264,7 @@
     font-family: 'Playfair Display', serif;
     font-size: clamp(30px, 4.5vw, 48px);
     font-weight: 700; line-height: 1.08; letter-spacing: -1.2px;
-    color: #fff; margin-bottom: 14px;
+    color: var(--text); margin-bottom: 14px;
   }
   .section-title em { font-style: italic; font-weight: 400; }
 
@@ -322,7 +322,7 @@
   .tool-name {
     font-family: 'Playfair Display', serif;
     font-size: 30px; font-weight: 700; letter-spacing: -0.5px;
-    color: #fff; line-height: 1;
+    color: var(--text); line-height: 1;
   }
   .tool-name .accent { color: var(--accent); }
 
@@ -539,7 +539,7 @@
 
   .resource-price {
     font-family: 'Playfair Display', serif;
-    font-size: 24px; color: #fff; margin-bottom: 5px;
+    font-size: 24px; color: var(--text); margin-bottom: 5px;
   }
   .resource-name {
     font-size: 10px; color: var(--text); letter-spacing: 0.08em; margin-bottom: 10px;
@@ -765,9 +765,21 @@
     .newsletter-input { border-right: 1px solid var(--border2); border-bottom: none; }
     footer { padding: 32px 20px; flex-direction: column; align-items: flex-start; }
   }
+  .silhouette-bg {
+    position: fixed;
+    inset: 0;
+    background: url('/flyer-bg.jpg') center center / auto 95vh no-repeat;
+    mix-blend-mode: darken;
+    opacity: 0.55;
+    pointer-events: none;
+    z-index: 50;
+  }
 </style>
+<!-- deploy-stamp:textfix -->
 </head>
 <body>
+<div class="silhouette-bg"></div>
+
 
 <!-- ─── NAV ───────────────────────────────────────────────────────────────── -->
 <nav id="nav">
@@ -912,14 +924,14 @@
     </div>
 
     <!-- ── ImageTagger ── -->
-    <div class="tool-card dimmed">
+    <div class="tool-card">
       <div class="tool-header">
         <div>
           <div class="tool-category">AI Image Tagging</div>
           <div class="tool-name">Image<span class="accent">Tagger</span></div>
         </div>
         <div class="tool-badges">
-          <span class="badge badge-soon">Coming Soon</span>
+          <span class="badge badge-live">Live</span>
           <span class="badge badge-price">$79 one-time</span>
         </div>
       </div>
@@ -932,7 +944,7 @@
         <li>BYOK: bring your own xAI key, zero recurring API cost</li>
         <li>Viewer included — filter by tag, export selections, generate delete scripts</li>
       </ul>
-      <a href="#newsletter" class="tool-cta waitlist">Join the Waitlist →</a>
+      <a href="https://atagger.com" target="_blank" rel="noopener" class="tool-cta">Get ImageTagger →</a>
     </div>
 
     <!-- ── VideoTagger ── -->
@@ -1187,6 +1199,7 @@
   <div class="footer-links">
     <a href="https://acaption.com" target="_blank" rel="noopener">Acaption</a>
     <a href="https://gifperfect.com" target="_blank" rel="noopener">GIF Perfect</a>
+    <a href="https://atagger.com" target="_blank" rel="noopener">ImageTagger</a>
     <a href="#tools">Tools</a>
     <a href="#agencies">Agencies</a>
     <a href="mailto:acreatorslab@translatea.com">Contact</a>

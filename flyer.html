@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; }
+
+  body {
+    font-family: 'DM Mono', monospace;
+    position: relative;
+    background: #f5f2ee;
+  }
+
+  /* ── Background image ── */
+  .bg {
+    position: absolute; inset: 0; z-index: 0;
+    background: url('flyer-bg.jpg') center 50% / auto 82% no-repeat;
+    background-color: #f5f2ee;
+  }
+  /* Semi-transparent light wash over image */
+  .bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(245,242,238,0.52);
+  }
+
+  /* ── Border frame ── */
+  .frame {
+    position: absolute; inset: 28px;
+    border: 1px solid rgba(200,16,46,0.25);
+    pointer-events: none; z-index: 3;
+  }
+  .frame::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent 5%, #c8102e 50%, transparent 95%);
+    opacity: 0.8;
+  }
+  .frame::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent 10%, rgba(200,16,46,0.3) 50%, transparent 90%);
+  }
+
+  /* Corner marks */
+  .corner {
+    position: absolute; z-index: 4;
+    width: 12px; height: 12px;
+    border-color: #c8102e; border-style: solid; opacity: 0.5;
+  }
+  .corner.tl { top: 27px; left: 27px; border-width: 1px 0 0 1px; }
+  .corner.tr { top: 27px; right: 27px; border-width: 1px 1px 0 0; }
+  .corner.bl { bottom: 27px; left: 27px; border-width: 0 0 1px 1px; }
+  .corner.br { bottom: 27px; right: 27px; border-width: 0 1px 1px 0; }
+
+  /* ── All content sits above bg ── */
+  .content {
+    position: absolute; inset: 0; z-index: 2;
+  }
+
+  /* ── LOGO — centered, top ── */
+  .logo-block {
+    position: absolute;
+    top: 58px;
+    left: 50%; transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
+  }
+  .eyebrow {
+    font-size: 8px; letter-spacing: 0.44em; text-transform: uppercase;
+    color: #c8102e; margin-bottom: 8px;
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px; font-weight: 700;
+    line-height: 1; letter-spacing: -3px;
+    color: #0e0e0e;
+    text-shadow: 0 2px 24px rgba(245,242,238,0.9);
+  }
+  .logo .a { color: #c8102e; }
+  .logo .rest { font-style: italic; font-weight: 400; }
+
+  /* ── Each item absolutely placed ── */
+  .item {
+    position: absolute;
+    display: flex; flex-direction: column; gap: 3px;
+  }
+  .item.L { text-align: right; }
+  .item.R { text-align: left; }
+
+  .item-tag {
+    font-size: 7.5px; letter-spacing: 0.34em; text-transform: uppercase;
+    color: #c8102e; opacity: 0.75;
+  }
+  .item-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700; letter-spacing: -0.5px; line-height: 1;
+    color: #0e0e0e;
+    text-shadow: 0 1px 18px rgba(245,242,238,1), 0 0 30px rgba(245,242,238,0.8);
+  }
+  .item-name em { font-weight: 400; }
+  .item-name .accent { color: #c8102e; }
+  .item-sub {
+    font-size: 9px; letter-spacing: 0.1em;
+    color: #6b6259;
+  }
+
+  /* Platform dot */
+  .pdot {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 7.5px; letter-spacing: 0.24em; text-transform: uppercase;
+  }
+  .pdot::before { content: ''; width: 4px; height: 4px; border-radius: 50%; flex-shrink:0; }
+  .pdot.of  { color: #0a6a80; }
+  .pdot.of::before  { background: #00AFF0; }
+  .pdot.x   { color: #4a4240; }
+  .pdot.x::before   { background: #6b6259; }
+  .pdot.tg  { color: #1a7aaa; }
+  .pdot.tg::before  { background: #2AABEE; }
+
+  /* ── FOOTER — under feet ── */
+  .footer-block {
+    position: absolute;
+    bottom: 50px;
+    left: 50%; transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
+  }
+  .footer-url {
+    font-family: 'Playfair Display', serif;
+    font-style: italic; font-size: 34px;
+    color: #0e0e0e; letter-spacing: -0.5px;
+    text-shadow: 0 2px 20px rgba(245,242,238,0.95);
+  }
+  .footer-pills {
+    display: flex; gap: 10px; justify-content: center; margin-top: 10px;
+  }
+  .pill {
+    font-size: 7.5px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: #6b6259; border: 1px solid rgba(107,98,89,0.3);
+    padding: 5px 11px;
+    background: rgba(245,242,238,0.7);
+  }
+  .pill.red { color: #c8102e; border-color: rgba(200,16,46,0.3); }
+</style>
+</head>
+<body>
+
+  <div class="bg"></div>
+
+  <div class="frame"></div>
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
+
+  <div class="content">
+
+    <!-- LOGO above head -->
+    <div class="logo-block">
+      <div class="eyebrow">Adult Creator Tools</div>
+      <div class="logo"><span class="a">A</span><span class="rest">CreatorsLab</span></div>
+    </div>
+
+    <!-- LEFT items — right-aligned so last letter hugs left body edge -->
+
+    <!-- Acaption — shoulder level, body left edge ~360px -->
+    <div class="item L" style="top:245px; right:670px;">
+      <div class="item-tag">AI Captions</div>
+      <div class="item-name" style="font-size:44px;"><span class="accent">A</span><em>caption</em></div>
+      <div class="item-sub">acaption.com</div>
+    </div>
+
+    <!-- @AcaptionBot — upper chest, body narrows slightly ~350px -->
+    <div class="item L" style="top:388px; right:736px;">
+      <div class="item-tag">Telegram Bot</div>
+      <div class="item-name" style="font-size:36px;">@<em>AcaptionBot</em></div>
+      <div class="item-sub">200 ⭐ · 3 free demos</div>
+      <div class="item-sub">t.me/AcaptionBot</div>
+    </div>
+
+    <!-- GIF Perfect — waist, body ~340px -->
+    <div class="item L" style="top:545px; right:702px;">
+      <div class="item-tag">GIF Creation</div>
+      <div class="item-name" style="font-size:40px;"><span class="accent">GIF</span> <em>Perfect</em></div>
+      <div class="item-sub">gifperfect.com</div>
+    </div>
+
+    <!-- Slo-Mo Perfect — hip, body ~330px -->
+    <div class="item L" style="top:685px; right:690px;">
+      <div class="item-tag">Slow Motion</div>
+      <div class="item-name" style="font-size:38px;">Slo-Mo <span class="accent">Perfect</span></div>
+      <div class="item-sub">slomoperfect.com</div>
+    </div>
+
+    <!-- ImageTagger — thigh, body narrows ~310px -->
+    <div class="item L" style="top:840px; right:676px;">
+      <div class="item-tag">AI Image Tagging</div>
+      <div class="item-name" style="font-size:36px;">Image<span class="accent">Tagger</span></div>
+      <div class="item-sub">atagger.com</div>
+    </div>
+
+    <!-- RIGHT items — left-aligned to hug right body edge -->
+
+    <!-- Automated Posting — shoulder, body right edge ~720px -->
+    <div class="item R" style="top:245px; left:680px;">
+      <div class="item-tag">Automation</div>
+      <div class="item-name" style="font-size:38px;">Automated<br><em>Posting</em></div>
+      <div class="pdot of">OnlyFans</div>
+    </div>
+
+    <!-- Creator Promo — chest ~712px -->
+    <div class="item R" style="top:415px; left:714px;">
+      <div class="item-name" style="font-size:34px;">Creator Promo<br><em>Automation</em></div>
+      <div class="pdot of">OnlyFans</div>
+    </div>
+
+    <!-- Auto Mass Messaging — waist ~700px -->
+    <div class="item R" style="top:572px; left:702px;">
+      <div class="item-name" style="font-size:36px;">Auto Mass<br><em>Messaging</em></div>
+      <div class="pdot of">OnlyFans</div>
+    </div>
+
+    <!-- AutoXPoster — hip ~690px -->
+    <div class="item R" style="top:730px; left:692px;">
+      <div class="item-name" style="font-size:38px;">Auto<em>XPoster</em></div>
+      <div class="pdot x">X / Twitter</div>
+    </div>
+
+    <!-- Telegram Channel — thigh ~678px -->
+    <div class="item R" style="top:868px; left:680px;">
+      <div class="item-name" style="font-size:36px;">Telegram<br><em>Channel</em></div>
+      <div class="pdot tg">Telegram</div>
+    </div>
+
+    <!-- FOOTER under feet -->
+    <div class="footer-block">
+      <div class="footer-url">acreatorslab.com</div>
+      <div class="footer-pills">
+        <span class="pill red">8 Live Products</span>
+        <span class="pill">No Censorship</span>
+        <span class="pill">No Refusals</span>
+        <span class="pill">API & B2B</span>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

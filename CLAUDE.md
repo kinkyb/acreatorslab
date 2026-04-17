@@ -49,6 +49,7 @@ Tool cards: red top-border reveal on hover, dimmed opacity for coming-soon items
 | Acaption | ✅ Live | acaption.com | €59–€199/mo | Includes @AcaptionBot on Telegram (200 ⭐ / 3 free demos) |
 | GIF Perfect | ✅ Live | gifperfect.com | $29–$199 one-time | Stripe live |
 | Slo-Mo Perfect | ✅ Live | slomoperfect.com | $29–$179 one-time | Desktop slo-mo tool, Python/tkinter/PyInstaller, niche-agnostic |
+| Aspect Perfect | ✅ Live | aspectperfect.com | $29–$179 one-time | Desktop aspect ratio converter, any image/video to any ratio |
 | ImageTagger + Viewer | ✅ Live | atagger.com | $79 one-time | Desktop app, AI image tagging |
 | VideoTagger + Viewer | 🔜 Coming Soon | TBD | Bundled | Same catalogue/Viewer as ImageTagger |
 | AutoXPoster | 🔜 Coming Soon | autoxposter.com | Subscription TBD | Engine running in prod, needs SaaS wrapper |

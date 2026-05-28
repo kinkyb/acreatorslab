@@ -449,6 +449,30 @@
   .tool-cta.waitlist { color: var(--amber-text); border-bottom-color: rgba(212,169,106,0.28); }
   .tool-cta.waitlist:hover { border-bottom-color: var(--amber-text); }
 
+  /* ── pitch block (video + sales-pitch CTAs inside a tool card) ── */
+  .tool-pitch-block {
+    margin-top: 22px;
+    padding: 18px 0 0;
+    border-top: 1px dashed var(--border);
+  }
+  .tool-pitch-label {
+    font-size: 8px; letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 10px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .tool-pitch-label::before {
+    content: ''; width: 14px; height: 1px;
+    background: var(--accent); opacity: 0.5;
+  }
+  .tool-pitch-desc {
+    font-size: 10px; color: var(--muted);
+    line-height: 1.85; letter-spacing: 0.04em;
+    margin-bottom: 16px;
+  }
+  .tool-pitch-actions {
+    display: flex; gap: 22px 28px; flex-wrap: wrap;
+  }
+
   /* ─── BUNDLE ─────────────────────────────────────────────────────────── */
   .bundle-box {
     background: var(--surface);
@@ -898,6 +922,16 @@
         <li>Mac (Apple-notarized) + Windows desktop app — one purchase, both platforms</li>
       </ul>
       <a href="https://perfectstudio.app" target="_blank" rel="noopener noreferrer" class="tool-cta">Get PerfectStudio →</a>
+
+      <!-- ── Adult-creator pitch (15-sec promo + full sales pitch, hosted here on ACreatorsLab) ── -->
+      <div class="tool-pitch-block">
+        <div class="tool-pitch-label">For Adult Creators</div>
+        <p class="tool-pitch-desc">15-second walkthrough and full sales pitch built for OnlyFans, Fansly, Reddit and Telegram creators. Privacy-first, no cloud, no account — one source video becomes a week of platform-ready content.</p>
+        <div class="tool-pitch-actions">
+          <a href="/perfectstudio-promo.mp4" class="tool-cta">▶ Watch the 15-sec Promo</a>
+          <a href="/perfectstudio-pitch.html" class="tool-cta">Read the Sales Pitch →</a>
+        </div>
+      </div>
     </div>
 
     <!-- ── ImageTagger ── -->
@@ -1004,10 +1038,31 @@
       </div>
     </div>
 
-    <!-- Stream 3 — Mass Messaging -->
+    <!-- Stream 3 — Share for Share (SFS) -->
     <div class="automation-stream">
       <div class="stream-meta">
         <div class="stream-number">Stream 03</div>
+        <div class="stream-name">Share for<br><em>Share (SFS)</em></div>
+        <span class="stream-badge stream-badge-live">● Live · Pre-Built Setup</span>
+        <div class="platform-tags" style="margin-top:16px;"><span class="ptag ptag-of">OnlyFans</span></div>
+      </div>
+      <div class="stream-body">
+        <p class="stream-desc">A fully automated cross-creator promotion engine — you feature other creators, they feature you back. The setup posts about each partner creator on a rotating schedule and sends a confirmation DM, driving mutual traffic between accounts at zero cost. Where Creator Promo Automation runs paid placements, SFS trades in reach.</p>
+        <ul class="stream-features">
+          <li>Atomic post + DM per partnered creator — fully hands-off</li>
+          <li>Rolling rotation across your entire partner roster — tested with 40+ creators in production</li>
+          <li>Schedule walks through all 24 hours over a multi-day cycle for full audience coverage</li>
+          <li>On-the-fly explicit captions via Acaption, matched to each featured creator</li>
+          <li>Mutual traffic exchange — partners reciprocate in their own feeds, lifting both sides</li>
+          <li>Available as a pre-built setup or custom-built around your partner network</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Stream 4 — Mass Messaging -->
+    <div class="automation-stream">
+      <div class="stream-meta">
+        <div class="stream-number">Stream 04</div>
         <div class="stream-name">Auto Mass<br><em>Messaging</em></div>
         <span class="stream-badge stream-badge-live">● Live · Pre-Built Setup</span>
         <div class="platform-tags" style="margin-top:16px;"><span class="ptag ptag-of">OnlyFans</span></div>
@@ -1024,10 +1079,10 @@
       </div>
     </div>
 
-    <!-- Stream 4 — AutoXPoster -->
+    <!-- Stream 5 — AutoXPoster -->
     <div class="automation-stream">
       <div class="stream-meta">
-        <div class="stream-number">Stream 04</div>
+        <div class="stream-number">Stream 05</div>
         <div class="stream-name">Auto<br><em>XPoster</em></div>
         <span class="stream-badge stream-badge-live">● Live · Done For You</span>
         <div class="platform-tags" style="margin-top:16px;"><span class="ptag ptag-x">X / Twitter</span><span class="ptag" style="background:rgba(200,16,46,0.1);color:var(--accent);border-color:rgba(200,16,46,0.25);">+ More</span></div>
@@ -1048,10 +1103,10 @@
       </div>
     </div>
 
-    <!-- Stream 5 — Telegram Channel -->
+    <!-- Stream 6 — Telegram Channel -->
     <div class="automation-stream">
       <div class="stream-meta">
-        <div class="stream-number">Stream 05</div>
+        <div class="stream-number">Stream 06</div>
         <div class="stream-name">Telegram<br><em>Channel</em></div>
         <span class="stream-badge stream-badge-live">● Live · Pre-Built Setup</span>
         <div class="platform-tags" style="margin-top:16px;"><span class="ptag ptag-tg">Telegram</span></div>
